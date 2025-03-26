@@ -3,30 +3,26 @@
 Script to generate publication-ready figures in Matlab
 
 ```Matlab
-function publicationPrint(fig,ancho,alto,nombre_archivo,tipo,fsz, fName)
+publicationPrint(fig, fig_width, fig_height, file_name, file_type, font_size, font_name)
 ```
-Asigna un tamaño en cm a la figura, cambia letra a Times New Roman 11 y
-exporta una imágen del tipo pedido. Opcionalmente se puede cambiar fsz 
-y fName para modificar el tipo de letra. 
+Assigns a size in cm to the figure, changes the font to Times New Roman 11, and exports an image of the requested type. Optionally, fsz and fName can be modified to change the font style.
 
-### ARGUMENTOS:
+### ARGUMENTS:
 
-- fig:      handle a la figura (h1 = handle(1) gcf recupera el handle actual)
-- ancho:    ancho en cm
-- alto:     alto en cm o array vacío [] para relación 1.6
-- nombre:   nombre del archivo
-- tipo:     Tipo de archivo a generar: 'png' , 'eps', 'pdf'
+ - fig: Handle to the figure (h1 = handle(1), gcf retrieves the current handle).
+ - fig_width: Desired width in cm.
+ - fig_height: Desired height in cm, or an empty array [] for a 1.6 aspect ratio.
+ - file_name: Filename.
+ - file_type: File type to generate: 'png', 'eps', 'pdf'.
 
-OPCIONAL: 
+### OPTIONAL:
 
-- fsz:      tamaño de letra (default 11)
-- fName:    Tipografía (default Times New Roman)
+ - font_size: Font size (default: 11).
+ - font_name: Font type (default: Times New Roman).
 
-## EJEMPLO TIPICO: 
+### TYPICAL EXAMPLE:
 
 ```Matlab
-publicationPrint6(gcf,8.6,[],'Figura1','pdf')
+publicationPrint(gcf,8.6,[],'Figure1','pdf')
 ```
-
-guarda la figura actual en el directorio actual, con ancho 8.6 
-y alto 8.6/1.6
+Saves the current figure in the current directory with a width of 8.6 cm and a height of 8.6/1.6 cm.
